@@ -113,6 +113,16 @@ Here are the questions for this reflection:
 
     **Import**: Fitur ini memungkinkan saya mengimport postman yang sudah dibuat.
 
-    
-
 #### Reflection Publisher-3
+
+- >Observer Pattern has two variations: Push model (publisher pushes data to subscribers) and Pull model (subscribers pull data from publisher). In this tutorial case, which variation of Observer Pattern that we use?
+
+  Dalam kasus tutorial ini, kita menggunakan variasi Push Model dari Observer Pattern. Dalam Push Model, publisher (NotificationService) mengirimkan data langsung kepada subscribers (Subscriber) ketika terjadi peristiwa yang diamati (seperti pembuatan, promosi, atau penghapusan produk). Dalam hal ini, ketika produk dibuat, dipromosikan, atau dihapus, NotificationService secara aktif mengirimkan notifikasi kepada semua subscribers yang berlangganan jenis produk tersebut. Oleh karena itu, kita menggunakan Push Model di mana data (notifikasi) didorong ke subscribers.
+
+- >What are the advantages and disadvantages of using the other variation of Observer Pattern for this tutorial case? (example: if you answer Q1 with Push, then imagine if we used Pull)
+
+  Jika digunakan pakai pull model, keuntungannya adalah meningkatkan privasi dan mengurangi beban pada publisher, karena informasi hanya diberikan kepada subscribers yang meminta. Namun, kerugiannya adalah potensi peningkatan latency dan kompleksitas implementasi yang mungkin terjadi karena subscribers perlu aktif meminta informasi dari publisher secara berkala.Oleh karena itu, pilihan antara Push Model dan Pull Model tergantung pada kebutuhan spesifik aplikasi dan preferensi desain.
+
+- >Explain what will happen to the program if we decide to not use multi-threading in the notification process.
+
+  Proses notifikasi akan dilakukan secara sinkronus, menyebabkan pengiriman notifikasi kepada setiap subscriber terjadi secara berurutan. Hal ini dapat mengakibatkan penurunan kinerja aplikasi karena proses notifikasi menjadi lambat dan dapat menghambat responsivitasnya, terutama jika jumlah subscriber yang besar atau waktu yang dibutuhkan untuk mengirimkan notifikasi kepada setiap subscriber cukup lama. 
